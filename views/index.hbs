@@ -1,2 +1,61 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1 class="flashit">{{title}}</h1>
+<p class="flashit">Welcome to {{title}}</p>
+
+<div class="row">
+  <div class="col-xs-6">
+    <form class="" action="/" method="post">
+      <div class="radio">
+        <label class="flashit">
+          <input type="radio" name="morals" id="optionsGood" value="good" {{#if morals}}checked{{/if}}>
+          Good
+        </label>
+      </div>
+      <div class="radio">
+        <label class="flashit">
+          <input type="radio" name="morals" id="optionsEvil" value="evil" {{#unless morals}}checked{{/unless}}>
+          Evil
+        </label>
+      </div>
+      <div class="form-group">
+    <label class="flashit" for="idFavFood">Favorite Food</label>
+    <input type="text" class="form-control" id="idFavFood" placeholder="{{favFood}}" name="favFood">
+
+  </div>
+  <div class="form-group">
+    <label class="flashit" for="idFavColor">Favorite Color</label>
+    <select class="form-control" name="favColor">
+      <option value="red">Red</option>
+      <option value="orange">Orange</option>
+      <option value="yellow">Yellow</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+      <option value="purple">Purple</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label class="flashit" for="idInsanity">Insanity Slider</label>
+    <input type="range" name="insanity" id="idInsanity" min="1" max="10" value="{{insanity}}">
+  </div>
+
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6">
+    <br>
+    {{#if morals}}
+      <h3 class="flashit">Good</h3>
+      <p class="flashit">
+        In its most general context of the study of morality, ethics, religion and philosophy, the good often refers to and denotes that conduct which is to be preferred and prescribed by society and its social constituents as beneficial and useful to the social
+        needs of society and its preferred conventions. The specific meaning and etiology of the meaning and use of the 'good' and its associated translations among ancient and contemporary languages has varied substantially in its inflected meaning depending
+        of circumstances of place, history, religious context and philosophical context.
+      </p>
+    {{else}}
+    <h3 class="flashit">Evil</h3>
+      <p class="flashit">Evil, in a general context, is the absence or opposite of that which is described as being good. Often, evil denotes profound immorality.  In certain religious contexts, evil has been described as a supernatural force. Definitions of evil vary,
+        as does the analysis of its motives. However, elements that are commonly associated with evil involve unbalanced behavior involving expediency, selfishness, ignorance, or neglect.</p>
+
+    {{/if}}
+  </div>
+</div>

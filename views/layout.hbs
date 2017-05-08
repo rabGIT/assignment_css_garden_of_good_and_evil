@@ -20,11 +20,32 @@
 
   <title>{{title}}</title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  <style media="screen">
+    {{#unless morals}}
+    body {
+      background-color: grey;
+
+    }
+    h1 {
+      color: red;
+    }
+    h3 {
+      color: red;
+    }
+    {{/unless}}
+    p {
+      color: {{favColor}};
+    }
+    .flashit{
+    	-webkit-animation: flash linear .1s infinite;
+    	animation: flash linear {{flash}} infinite;
+    }
+  </style>
 </head>
 
 <body>
   <div class="container">
-      {{{body}}}
+    {{{body}}}
   </div>
 
 
@@ -33,6 +54,9 @@
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $("select option[value={{favColor}}]").prop('selected', true);
+  </script>
 </body>
 
 </html>
